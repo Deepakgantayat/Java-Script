@@ -1,0 +1,30 @@
+<body>
+    <script>
+        const dctAxios = {
+            get: function(url){
+                return new Promise(function(resolve, reject){
+                    const xhr= new XmlHttpRequest()
+                    xhr.open('GET', url)
+                    xhr.send()
+                    xhr.onload = function(){
+                        resolve(JSON.parse(xhr.responseText))
+                    }
+                    xhr.onerror = function(){
+                        reject(xhr.rsponseText)
+                    }
+
+                })
+            }
+            
+        }
+        dctAxios.get('http://jsonplaceholder.typicode.com/users')
+            .then(function(data){
+                console.log('after the data has come back')
+                console.log(data)
+            })
+            .catch(function(err){
+                console.log(err)
+            })
+                console.log('below api code')
+        </script>
+</body>

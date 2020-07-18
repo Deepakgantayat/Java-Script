@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Guess game</title>
+    </head>
+    <body>
+        <script>
+            var name = prompt("Enter your name")
+            console.log('welcome to the guess game ' + name)
+
+            var targetnumber = Math.round(Math.random() * 100)
+            console.log(targetnumber)
+            var maxguess = 10, playerguess = 0 //initialization
+
+        while(playerguess < maxguess) { //condition
+            var guess = prompt("Guess my number")
+            if (guess < targetnumber) {
+                alert('Oops your guess was low')
+            } else if (guess > targetnumber) {
+               alert('Oops your guess was high')
+            } else if (guess == targetnumber) {
+                alert('Good job ' + name + ' you guessed my number')
+            break
+            }
+            playerguess = playerguess + 1 //increamention
+            // playerGuess += 1 or playerGuess++
+
+        }
+        if(playerguess == maxguess){
+            alert('sorry, you did\'t get my number, my number was ' + targetnumber)
+        }
+        console.log('we are outside the loop', playerguess, maxguess)
+        // targetNumber - Camel Casing - c, c++, java, javascript
+        // target_number - snake casing - python, ruby
+        // TargetNumber - Pascal casing -file names
+        // target number , targetnumber
+</script>
+    </body>
+</html>
